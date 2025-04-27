@@ -1,5 +1,5 @@
 <x-layout>
-    <form action="{{ route('profile.store') }}" method="POST">
+    <form action="{{ route('profiles.store') }}" method="POST">
         <!-- CSRF token for security -->
         @csrf
 

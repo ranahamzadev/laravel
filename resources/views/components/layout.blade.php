@@ -19,10 +19,10 @@
     <header>
         <nav>
             <h1>The profiles</h1>
-            <a href="{{ route('ninjas.index') }}">
+            <a href="{{ route('profiles.index') }}">
                 All profiles
             </a>
-            <a href="{{ route('ninjas.create') }}">
+            <a href="{{ route('profiles.create') }}">
                 Create New Profile
             </a>
         </nav>
