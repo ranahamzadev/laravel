@@ -18,13 +18,37 @@
 
     <header>
         <nav>
-            <h1>The profiles</h1>
-            <a href="{{ route('profiles.index') }}">
-                All profiles
-            </a>
-            <a href="{{ route('profiles.create') }}">
-                Create New Profile
-            </a>
+            <h1><a href="{{ route('profiles.index') }}">
+                    All profiles
+                </a></h1>
+
+
+            @guest
+                <a href="{{ route('login') }}">
+                    <button type="submit" class="btn my-4">login</button>
+                </a>
+
+                <a href="{{ route('show.register') }}">
+                    <button type="submit" class="btn my-4">register</button>
+                </a>
+            @endguest
+
+            @auth
+                <span class="border-r-2 pr-2">
+                    Hi there, {{ Auth::user()->name }}
+                </span>
+                <a href="{{ route('profiles.create') }}">
+                    <button type="submit" class="btn my-4">Create New Profile</button>
+                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn my-4">logout</button>
+                </form>
+            @endauth
+
+
+
+
         </nav>
     </header>
 
